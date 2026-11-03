@@ -23,7 +23,7 @@ public class Connection : MonoBehaviour
                       ""content"": ""{_context}""
                     }}
                   ],
-                  ""stream"": false
+                  ""stream"": true
                 }}";
         
         // HTTP 통신 규약
