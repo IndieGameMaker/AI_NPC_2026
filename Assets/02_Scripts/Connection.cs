@@ -26,6 +26,9 @@ public class Connection : MonoBehaviour
                   ""stream"": false
                 }}";
         
+        // HTTP 통신 규약
+        // POST 방식 : 보안성 있고, 파라메터의 길의 제약이 없다.
+        // GET 방식 : 보안 X   http://www.naver.com?cafe_id=1234&user_id=zack
         UnityWebRequest request = UnityWebRequest.Post(url, json, "application/json");
         Debug.Log($"[접속] Ollama 서버에 요청 전송 중 ...");
         
