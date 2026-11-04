@@ -22,7 +22,8 @@ public class OllamaClient : MonoBehaviour
     // 요청 레퍼 메서드
     public void SendChat(List<OllamaMessage> messages)
     {
-        // TODO: Request 호출
+        // Request 호출
+        StartCoroutine(PostRequest(messages));
     }
     
     // REST API 메서드
