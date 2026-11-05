@@ -29,11 +29,24 @@ public class ChatManager : MonoBehaviour
     private void OnEnable()
     {
         _sendButton.onClick.AddListener(OnSendButtonClick);
+        OllamaClient.OnResponseReceived += ResponseHandler;
     }
 
     private void OnDisable()
     {
         _sendButton.onClick.RemoveListener(OnSendButtonClick);
+        OllamaClient.OnResponseReceived -= ResponseHandler;
+    }
+
+    private void ResponseHandler(string response)
+    {
+        _history.Add(new OllamaMessage
+        {
+            role = "assistant",
+            content = response
+        });
+
+        _npcDialogueText.text = $"{response}";
     }
 
     private void OnSendButtonClick()

@@ -301,6 +301,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &326694593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 988799073703653251, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+  m_PrefabInstance: {fileID: 1848214835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 326694593}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &901926017
@@ -763,6 +768,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 988799073703653251, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_Name
+      value: ' '
+      objectReference: {fileID: 0}
     - target: {fileID: 1380287684886766836, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_text
       value: "\uD55C\uAE00 \uD45C\uC2DC\uAC00 \uC798\uB418\uB098\uC694?"
@@ -782,6 +791,14 @@ PrefabInstance:
     - target: {fileID: 1394131233520033519, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_Name
       value: LLM Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519623809145709640, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 29.853
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519623809145709640, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.074
       objectReference: {fileID: 0}
     - target: {fileID: 3277141943812548315, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_GlobalFontAsset
@@ -928,7 +945,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3277141943812548315, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
   m_PrefabInstance: {fileID: 1848214835}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 326694593}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
