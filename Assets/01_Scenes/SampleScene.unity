@@ -768,9 +768,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 367304409981577260, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 329.5
+      objectReference: {fileID: 0}
     - target: {fileID: 988799073703653251, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_Name
-      value: ' '
+      value: InputField
       objectReference: {fileID: 0}
     - target: {fileID: 1380287684886766836, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_text
@@ -793,12 +797,24 @@ PrefabInstance:
       value: LLM Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 2519623809145709640, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 294.6646
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519623809145709640, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_SizeDelta.y
       value: 29.853
       objectReference: {fileID: 0}
     - target: {fileID: 2519623809145709640, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 155.61118
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519623809145709640, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -23.074
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277141943812548315, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_Text
+      value: "\uC548\uB155\uD558\uC138\uC694. \uC800\uB294 \uBC29\uB791 \uAC80\uAC1D, \uC7AD\uC774\uB77C\uACE0 \uD569\uB2C8\uB2E4."
       objectReference: {fileID: 0}
     - target: {fileID: 3277141943812548315, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_GlobalFontAsset
@@ -885,6 +901,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272160935473523518, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_text
+      value: "\uC548\uB155\uD558\uC138\uC694. \uC800\uB294 \uBC29\uB791 \uAC80\uAC1D, \uC7AD\uC774\uB77C\uACE0 \uD569\uB2C8\uB2E4.\u200B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272160935473523518, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 55ea6fcf085f1486592751269eff8fa0, type: 2}
@@ -902,6 +922,10 @@ PrefabInstance:
       objectReference: {fileID: -1907120265858025198, guid: 55ea6fcf085f1486592751269eff8fa0, type: 2}
     - target: {fileID: 5327324259669945440, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246775483355890510, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7246775483355890510, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
@@ -923,6 +947,14 @@ PrefabInstance:
     - target: {fileID: 7833846729100549987, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167728977286798574, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 69.0947
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167728977286798574, guid: c83ca4c25aca54104b0094bb281201b1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -34.547363
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
