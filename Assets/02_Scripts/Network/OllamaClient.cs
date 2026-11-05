@@ -68,3 +68,15 @@ public class OllamaClient : MonoBehaviour
         OnLoadingChanged?.Invoke(false); // UI 변경
     }
 }
+
+/* NDJson (Newline Delimiter JSON)
+ * - stream = true
+ * - 
+ * JSON\n
+ * JSON\n
+ * JSON\n
+ *
+ * 안녕하\n
+ * 세요. 저는
+ *  잭이라고\n
+ */

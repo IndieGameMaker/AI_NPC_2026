@@ -80,7 +80,7 @@ public class ChatManager : MonoBehaviour
                       $"성격: {_npcPersona.personality} " +
                       $"배경: {_npcPersona.background} " +
                       $"말투: {_npcPersona.speechStyle} " +
-                      "반드시 캐릭터 성격을 유지하고, 한글로 답하세요."
+                      "반드시 캐릭터 성격을 유지하고, 반드시 한글로 답하세요. 이모지와 한자어는 사용하지 않습니다."
         });
         
         _npcNameText.text = _npcPersona.name;
