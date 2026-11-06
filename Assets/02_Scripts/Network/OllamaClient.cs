@@ -18,12 +18,24 @@ public class OllamaClient : MonoBehaviour
     // 이벤트 선언
     public static event Action<string> OnResponseReceived;
     public static event Action<bool> OnLoadingChanged;
+    // 토큰 단위로 발생하는 내부 이벤트에 연결할 이벤트
+    public static event Action<string> OnTokenReceived;
+    
+    // 스트림 방식 여부
+    [SerializeField] private bool isStreaming = true;
     
     // 요청 레퍼 메서드
     public void SendChat(List<OllamaMessage> messages)
     {
-        // Request 호출
-        StartCoroutine(PostRequest(messages));
+        if (isStreaming)
+        {
+            StartCoroutine(PostRequestStream(messages));
+        }
+        else
+        {
+            // Request 호출
+            StartCoroutine(PostRequest(messages));
+        }
     }
     
     // REST API 메서드
@@ -66,6 +78,39 @@ public class OllamaClient : MonoBehaviour
         }
         
         OnLoadingChanged?.Invoke(false); // UI 변경
+    }
+    
+    // NDJson 방식의 POST 메서드
+    private IEnumerator PostRequestStream(List<OllamaMessage> messages)
+    {
+        OnLoadingChanged?.Invoke(true);
+        string json = JsonUtility.ToJson(new OllamaRequest
+        {
+            model = MODEL,
+            messages = messages,
+            stream = true
+        });
+        
+        // 토큰을 수신받을 때 마다 로직을 처리할 핸들러
+        var handler = new NDJsonDownloadHandler(OnTokenReceived);
+        
+        using UnityWebRequest request = new UnityWebRequest(API_URL, "POST");
+        request.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(json));
+        request.downloadHandler = handler; // 수신 받은 토큰을 처리하는 핸들러 연결
+        request.timeout = 60;
+        request.SetRequestHeader("Content-Type", "application/json");
+        
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            // 전체 context를 다 받은 이후에 호출
+            OnResponseReceived?.Invoke(handler.FullBuffer);
+        }
+        else
+        {
+            Debug.Log(request.error);
+        }
     }
 }
 
