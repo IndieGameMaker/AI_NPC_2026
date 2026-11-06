@@ -46,7 +46,7 @@ public class NDJsonDownloadHandler : DownloadHandlerScript
             if (res?.message == null) continue;
             
             // 전체 응답 버퍼에 토큰을 누적
-            _fullBuffer.Append(res.message);
+            _fullBuffer.Append(res.message.content);
             
             // 콜백을 통해서 토큰을 실시간으로 외부(OllamaClient)에 전달
             _onToken?.Invoke(res.message.content);
