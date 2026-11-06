@@ -52,7 +52,7 @@ public class OllamaClient : MonoBehaviour
 
         if (request.result == UnityWebRequest.Result.Success)
         {
-            //Debug.Log(request.downloadHandler.text);
+            Debug.Log(request.downloadHandler.text);
             
             // JSON 파싱 실제 message.content 부분을 추출
             var response = JsonUtility.FromJson<OllamaResponse>(request.downloadHandler.text);
