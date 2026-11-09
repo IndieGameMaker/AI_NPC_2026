@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Plastic.Newtonsoft.Json.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -26,8 +28,17 @@ public class OllamaClientEditor : Editor
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log(request.downloadHandler.text);
+                _modelNames = ParseModelNames(request.downloadHandler.text);
             }
         };
+    }
+    
+    // JSON 응답 결과에서 models 필드 값만 추출해서 List<string> 반환
+    private List<string> ParseModelNames(string json)
+    {
+        JObject obj = JObject.Parse(json);
+        List<string> modelList = obj["models"].Select(m => m["model"]?.ToString()).ToList();
+        return modelList;
     }
     
     public override void OnInspectorGUI()
