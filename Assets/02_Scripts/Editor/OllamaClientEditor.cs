@@ -60,6 +60,19 @@ public class OllamaClientEditor : Editor
         DrawDefaultInspector();
         
         var client = (OllamaClient)target;
+        
+        // 모델 선택 드롭다운 인터페이스 추가
+        if (_modelNames.Count > 0)
+        {
+            int newIndex = EditorGUILayout.Popup("Models", _selectedIndex, _modelNames.ToArray());
+            // 모델 변경
+            if (newIndex != _selectedIndex)
+            {
+                _selectedIndex = newIndex;
+                client.MODEL = _modelNames[_selectedIndex];
+            }
+        }
+        
         _systemMessage = EditorGUILayout.TextField("페르소나(system)", _systemMessage);
         _userMessage = EditorGUILayout.TextField("프롬프트(user)", _userMessage);
 
