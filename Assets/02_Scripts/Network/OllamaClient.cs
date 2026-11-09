@@ -13,7 +13,7 @@ public class OllamaClient : MonoBehaviour
     // 앤드 포인트
     private const string API_URL = "http://localhost:11434/api/chat";
     // LLM 모델
-    private const string MODEL = "gemma4:e2b";
+    public string MODEL = "gemma4:e2b";
     
     // 이벤트 선언
     public static event Action<string> OnResponseReceived;

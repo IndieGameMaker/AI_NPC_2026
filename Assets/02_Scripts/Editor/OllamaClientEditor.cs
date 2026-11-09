@@ -29,7 +29,21 @@ public class OllamaClientEditor : Editor
             {
                 Debug.Log(request.downloadHandler.text);
                 _modelNames = ParseModelNames(request.downloadHandler.text);
+
+                if (_modelNames.Count > 0)
+                {
+                    var client = (OllamaClient)target;
+                    // 현재 선택한 모델을 드롭다운에서 미리 선택되도록 인덱스 설정
+                    int idx = _modelNames.IndexOf(client.MODEL);
+
+                    _selectedIndex = (idx >= 0) ? idx : 0;
+                    client.MODEL = _modelNames[_selectedIndex];
+                    
+                    Repaint();
+                }
             }
+            // 메모리 해제
+            request.Dispose();
         };
     }
     
